@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PrecheckApi
+ * PrecheckOperationsApi
  *
  * Skip Pay API for partners
  *
@@ -38,14 +38,14 @@ use SkipPay\HeaderSelector;
 use SkipPay\ObjectSerializer;
 
 /**
- * PrecheckApi Class Doc Comment
+ * PrecheckOperationsApi Class Doc Comment
  *
  * @category Class
  * @package  SkipPay
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class PrecheckApi
+class PrecheckOperationsApi
 {
     /**
      * @var ClientInterface

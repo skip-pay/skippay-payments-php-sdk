@@ -1,6 +1,6 @@
 # SkipPay\SecurityApi
 
-All URIs are relative to https://api.partner.mallpay.cz.
+All URIs are relative to https://api.partner.skippay.cz.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

@@ -36,9 +36,9 @@ class Sdk
   
   
   /**
-    * @var _ApplicationsApi
+    * @var _ApplicationOperationsApi
     */
-  protected $_ApplicationsApi = null;
+  protected $_ApplicationOperationsApi = null;
   
   /**
     * @var _HealthCheckApi
@@ -46,14 +46,9 @@ class Sdk
   protected $_HealthCheckApi = null;
   
   /**
-    * @var _MerchantsitesApi
+    * @var _PrecheckOperationsApi
     */
-  protected $_MerchantsitesApi = null;
-  
-  /**
-    * @var _PrecheckApi
-    */
-  protected $_PrecheckApi = null;
+  protected $_PrecheckOperationsApi = null;
   
   /**
     * @var _SecurityApi
@@ -100,15 +95,15 @@ class Sdk
   }
 
   
-  public function ApplicationsApi(): A\ApplicationsApi {
-    if (null === $this->_ApplicationsApi) {
-        $this->_ApplicationsApi = new A\ApplicationsApi(
+  public function ApplicationOperationsApi(): A\ApplicationOperationsApi {
+    if (null === $this->_ApplicationOperationsApi) {
+        $this->_ApplicationOperationsApi = new A\ApplicationOperationsApi(
           $this->client,
           $this->config,
         );
     }
 
-    return $this->_ApplicationsApi;
+    return $this->_ApplicationOperationsApi;
   }
   
   public function HealthCheckApi(): A\HealthCheckApi {
@@ -122,26 +117,15 @@ class Sdk
     return $this->_HealthCheckApi;
   }
   
-  public function MerchantsitesApi(): A\MerchantsitesApi {
-    if (null === $this->_MerchantsitesApi) {
-        $this->_MerchantsitesApi = new A\MerchantsitesApi(
+  public function PrecheckOperationsApi(): A\PrecheckOperationsApi {
+    if (null === $this->_PrecheckOperationsApi) {
+        $this->_PrecheckOperationsApi = new A\PrecheckOperationsApi(
           $this->client,
           $this->config,
         );
     }
 
-    return $this->_MerchantsitesApi;
-  }
-  
-  public function PrecheckApi(): A\PrecheckApi {
-    if (null === $this->_PrecheckApi) {
-        $this->_PrecheckApi = new A\PrecheckApi(
-          $this->client,
-          $this->config,
-        );
-    }
-
-    return $this->_PrecheckApi;
+    return $this->_PrecheckOperationsApi;
   }
   
   public function SecurityApi(): A\SecurityApi {

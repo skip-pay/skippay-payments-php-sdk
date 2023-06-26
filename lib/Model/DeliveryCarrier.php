@@ -24,6 +24,8 @@
  */
 
 namespace SkipPay\Model;
+
+use ArrayAccess;
 use SkipPay\ObjectSerializer;
 
 /**
@@ -33,68 +35,254 @@ use SkipPay\ObjectSerializer;
  * @package  SkipPay
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
+ * @implements \ArrayAccess<?string, ?mixed>
  */
-class DeliveryCarrier
+class DeliveryCarrier implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    /**
-     * Possible values of this enum
-     */
-    
-    const CZ_POST_HAND = 'CZ_POST_HAND';
-    
-    const CZ_POST_OFFICE = 'CZ_POST_OFFICE';
-    
-    const CZ_POST_OTHER = 'CZ_POST_OTHER';
-    
-    const PPL = 'PPL';
-    
-    const DPD = 'DPD';
-    
-    const GEIS = 'GEIS';
-    
-    const IN_TIME = 'IN_TIME';
-    
-    const TOP_TRANS = 'TOP_TRANS';
-    
-    const GEBRUDER_WEISS = 'GEBRUDER_WEISS';
-    
-    const LOCAL_COURIER = 'LOCAL_COURIER';
-    
-    const TNT = 'TNT';
-    
-    const GLS = 'GLS';
-    
-    const HDS_COMFORT = 'HDS_COMFORT';
-    
-    const HDS_STANDARD = 'HDS_STANDARD';
-    
-    const MALL_DEPOSIT = 'MALL_DEPOSIT';
-    
+    public const DISCRIMINATOR = null;
 
     /**
-     * Gets allowable values of the enum.
+      * The original name of the model.
+      *
+      * @var string
+      */
+    protected static $openAPIModelName = 'DeliveryCarrier';
+
+    /**
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      * @phpstan-var array<string, string|class-string>
+      */
+    protected static $openAPITypes = [
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      * @phpstan-var array<string, string|null>
+      */
+    protected static $openAPIFormats = [
+    ];
+
+    /**
+      * Array of additional properties.
+      *
+      * @var array<array-key, array-key>
+      */
+    protected $additionalProperties = [];
+
+    /**
+     * Array of attributes where the key is the local name,
+     * and the value is the original name
      *
-     * @return scalar[]
+     * @var string[]
      */
-    public static function getAllowableEnumValues()
+    protected static $attributeMap = [
+    ];
+
+    /**
+     * Array of attributes to setter functions (for deserialization of responses)
+     *
+     * @var string[]
+     */
+    protected static $setters = [
+    ];
+
+    /**
+     * Array of attributes to getter functions (for serialization of requests)
+     *
+     * @var string[]
+     */
+    protected static $getters = [
+    ];
+
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
+
+    /**
+     * Constructor
+     */
+    public function __construct()
     {
-        return [
-            self::CZ_POST_HAND,
-            self::CZ_POST_OFFICE,
-            self::CZ_POST_OTHER,
-            self::PPL,
-            self::DPD,
-            self::GEIS,
-            self::IN_TIME,
-            self::TOP_TRANS,
-            self::GEBRUDER_WEISS,
-            self::LOCAL_COURIER,
-            self::TNT,
-            self::GLS,
-            self::HDS_COMFORT,
-            self::HDS_STANDARD,
-            self::MALL_DEPOSIT,
-        ];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public static function openAPITypes()
+    {
+        return self::$openAPITypes;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public static function openAPIFormats()
+    {
+        return self::$openAPIFormats;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function attributeMap()
+    {
+        return self::$attributeMap;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function setters()
+    {
+        return self::$setters;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function getters()
+    {
+        return self::$getters;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getModelName()
+    {
+        return self::$openAPIModelName;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function listInvalidProperties()
+    {
+        $invalidProperties = [];
+
+        return $invalidProperties;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function valid()
+    {
+        return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setAdditionalProperties(array $fields)
+    {
+        $fields = array_diff_key($fields, static::$attributeMap);
+        foreach ($this->additionalProperties as $additional_properties) {
+            unset($this->container[$additional_properties]);
+        }
+        $this->container += $fields;
+        $keys = array_keys($fields);
+        $this->additionalProperties = array_combine($keys, $keys);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setAdditionalProperty($property, $value)
+    {
+        if (isset(static::$attributeMap[$property])) {
+            throw new \InvalidArgumentException();
+        }
+        $this->additionalProperties[$property] = $property;
+        $this->container[$property] = $value;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAdditionalProperties()
+    {
+        $container = $this->container;
+        return array_map(function ($key) use ($container) {
+            return $container[$key];
+        }, $this->additionalProperties);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    #[\ReturnTypeWillChange]
+    public function offsetExists($offset)
+    {
+        return isset($this->container[$offset]);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    #[\ReturnTypeWillChange]
+    public function offsetGet($offset)
+    {
+        return $this->container[$offset] ?? null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    #[\ReturnTypeWillChange]
+    public function offsetSet($offset, $value)
+    {
+        if (is_null($offset)) {
+            throw new \RuntimeException('Appending to a model does not make sense. Provide an explicit property instead.');
+        } else {
+            if (!isset($this->attributeMap[$offset])) {
+                $this->additionalProperties[$offset] = $offset;
+            }
+            $this->container[$offset] = $value;
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    #[\ReturnTypeWillChange]
+    public function offsetUnset($offset)
+    {
+        /** @psalm-suppress PossiblyNullArrayOffset */
+        unset($this->container[$offset]);
+    }
+
+    /**
+     * Serializes the object to a value that can be serialized natively by json_encode().
+     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     *
+     * @return mixed Returns data which can be serialized by json_encode(), which is a value
+     * of any type other than a resource.
+     */
+    #[\ReturnTypeWillChange]
+    public function jsonSerialize()
+    {
+        return ObjectSerializer::sanitizeForSerialization($this);
+    }
+
+    /**
+     * Gets the string presentation of the object
+     *
+     * @return string
+     * @throws \JsonException
+     */
+    public function __toString()
+    {
+        return json_encode(
+            ObjectSerializer::sanitizeForSerialization($this),
+            JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR
+        );
     }
 }
-

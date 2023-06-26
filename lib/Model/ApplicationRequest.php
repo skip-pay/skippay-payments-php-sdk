@@ -320,7 +320,7 @@ class ApplicationRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets precheckIds
      *
-     * @param string[]|null $precheckIds Array of all precheck ids related to this application. See [Precheck operation](#reference/precheck-operations/precheck) and it's response (PrecheckResultsResponse).
+     * @param string[]|null $precheckIds Array of all precheck ids related to this application. See [Precheck operation](htttps://developers.skippay.cz/docs/api/precheck) and it's response (PrecheckResultsResponse).
      *
      * @return self
      */

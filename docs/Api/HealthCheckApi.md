@@ -1,6 +1,6 @@
 # SkipPay\HealthCheckApi
 
-All URIs are relative to https://api.partner.mallpay.cz.
+All URIs are relative to https://api.partner.skippay.cz.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ aPIhealthcheck($contentType): \SkipPay\Model\HealthCheckResponse
 
 API health check
 
-If the API back-end services are up and runing, you receive HTTP status code 200 with optional version info.  In other cases, you may receive errors similar to the following ones: | Status code | Description                                             | | ---         | ---                                                     | | 503         | `Service Unavailable` - there is planned service outage |  > Note: resource DOES NOT require valid *access_token* in the HTTP header of the requestGet current state of the API
+If the API back-end services are up and runing, you receive HTTP status code 200 with optional version info.  In other cases, you may receive errors similar to the following ones:    | Status code | Description                                             | | ---         | ---                                                     | | 503         | `Service Unavailable` - there is planned service outage |  > Note: resource DOES NOT require valid *access_token* in the HTTP header of the requestGet current state of the API
 
 ### Example
 

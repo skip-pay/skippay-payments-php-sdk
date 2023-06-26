@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ApplicationsApi
+ * ApplicationOperationsApi
  *
  * Skip Pay API for partners
  *
@@ -38,14 +38,14 @@ use SkipPay\HeaderSelector;
 use SkipPay\ObjectSerializer;
 
 /**
- * ApplicationsApi Class Doc Comment
+ * ApplicationOperationsApi Class Doc Comment
  *
  * @category Class
  * @package  SkipPay
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ApplicationsApi
+class ApplicationOperationsApi
 {
     /**
      * @var ClientInterface

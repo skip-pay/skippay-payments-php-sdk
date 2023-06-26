@@ -7,7 +7,7 @@ API documentation for Skip Pay partners.
 
 - API version: 1.0
 
-For more information, please visit [https://www.skippay.cz](https://www.skippay.cz)
+For more information, please visit [our developer portal](https://www.developers.skippay.cz) 
 
 ## Installation
 
@@ -82,37 +82,35 @@ $applicationId = 11b00a1ef1; // string | applicationId
 $applicationCancelRequest = new \SkipPay\Model\ApplicationCancelRequest(); // \SkipPay\Model\ApplicationCancelRequest
 
 try {
-    $result = $sdk->ApplicationsApi->cancelapplication($applicationId, $applicationCancelRequest);
+    $result = $sdk->ApplicationOperationsApi->cancelapplication($applicationId, $applicationCancelRequest);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ApplicationsApi->cancelapplication: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ApplicationOperationsApi->cancelapplication: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
 
 ## API Endpoints
 
-All URIs are relative to *https://api.partner.mallpay.cz*
+All URIs are relative to *https://api.partner.skippay.cz*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ApplicationsApi* | [**cancelapplication**](docs/Api/ApplicationsApi.md#cancelapplication) | **PUT** /financing/v1/applications/{applicationId}/cancel | Cancel application
-*ApplicationsApi* | [**changeapplicationorder**](docs/Api/ApplicationsApi.md#changeapplicationorder) | **PUT** /financing/v1/applications/{applicationId}/order | Change application order
-*ApplicationsApi* | [**createapplication**](docs/Api/ApplicationsApi.md#createapplication) | **POST** /financing/v1/applications | Create application
-*ApplicationsApi* | [**createapplicationfromrecurrence**](docs/Api/ApplicationsApi.md#createapplicationfromrecurrence) | **POST** /financing/v1/recurrences/{recurrenceId}/applications | Create application from recurrence
-*ApplicationsApi* | [**getapplicationdetail**](docs/Api/ApplicationsApi.md#getapplicationdetail) | **GET** /financing/v1/applications/{applicationId} | Get application detail
-*ApplicationsApi* | [**getorder**](docs/Api/ApplicationsApi.md#getorder) | **GET** /financing/v1/orders | Get order
-*ApplicationsApi* | [**getpaymentsonspecificapplication**](docs/Api/ApplicationsApi.md#getpaymentsonspecificapplication) | **GET** /financing/v1/applications/{applicationId}/payments | Get payments on specific application
-*ApplicationsApi* | [**getrecurrence**](docs/Api/ApplicationsApi.md#getrecurrence) | **GET** /financing/v1/recurrences/{recurrenceId} | Get recurrence
-*ApplicationsApi* | [**markorderitemsascancelled**](docs/Api/ApplicationsApi.md#markorderitemsascancelled) | **PUT** /financing/v1/applications/{applicationId}/order/cancel | Mark order items as cancelled
-*ApplicationsApi* | [**markorderitemsasdelivered**](docs/Api/ApplicationsApi.md#markorderitemsasdelivered) | **PUT** /financing/v1/applications/{applicationId}/order/deliver | Mark order items as delivered
-*ApplicationsApi* | [**markorderitemsasreturned**](docs/Api/ApplicationsApi.md#markorderitemsasreturned) | **PUT** /financing/v1/applications/{applicationId}/order/return | Mark order items as returned
-*ApplicationsApi* | [**markorderitemsassent**](docs/Api/ApplicationsApi.md#markorderitemsassent) | **PUT** /financing/v1/applications/{applicationId}/order/send | Mark order items as sent
-*ApplicationsApi* | [**updaterecurrence**](docs/Api/ApplicationsApi.md#updaterecurrence) | **PATCH** /financing/v1/recurrences/{recurrenceId} | Update recurrence
+*ApplicationOperationsApi* | [**cancelapplication**](docs/Api/ApplicationOperationsApi.md#cancelapplication) | **PUT** /financing/v1/applications/{applicationId}/cancel | Cancel application
+*ApplicationOperationsApi* | [**changeapplicationorder**](docs/Api/ApplicationOperationsApi.md#changeapplicationorder) | **PUT** /financing/v1/applications/{applicationId}/order | Change application order
+*ApplicationOperationsApi* | [**createapplication**](docs/Api/ApplicationOperationsApi.md#createapplication) | **POST** /financing/v1/applications | Create application
+*ApplicationOperationsApi* | [**createapplicationfromrecurrence**](docs/Api/ApplicationOperationsApi.md#createapplicationfromrecurrence) | **POST** /financing/v1/recurrences/{recurrenceId}/applications | Create application from recurrence
+*ApplicationOperationsApi* | [**getapplicationdetail**](docs/Api/ApplicationOperationsApi.md#getapplicationdetail) | **GET** /financing/v1/applications/{applicationId} | Get application detail
+*ApplicationOperationsApi* | [**getorder**](docs/Api/ApplicationOperationsApi.md#getorder) | **GET** /financing/v1/orders | Get order
+*ApplicationOperationsApi* | [**getpaymentsonspecificapplication**](docs/Api/ApplicationOperationsApi.md#getpaymentsonspecificapplication) | **GET** /financing/v1/applications/{applicationId}/payments | Get payments on specific application
+*ApplicationOperationsApi* | [**getrecurrence**](docs/Api/ApplicationOperationsApi.md#getrecurrence) | **GET** /financing/v1/recurrences/{recurrenceId} | Get recurrence
+*ApplicationOperationsApi* | [**markorderitemsascancelled**](docs/Api/ApplicationOperationsApi.md#markorderitemsascancelled) | **PUT** /financing/v1/applications/{applicationId}/order/cancel | Mark order items as cancelled
+*ApplicationOperationsApi* | [**markorderitemsasdelivered**](docs/Api/ApplicationOperationsApi.md#markorderitemsasdelivered) | **PUT** /financing/v1/applications/{applicationId}/order/deliver | Mark order items as delivered
+*ApplicationOperationsApi* | [**markorderitemsasreturned**](docs/Api/ApplicationOperationsApi.md#markorderitemsasreturned) | **PUT** /financing/v1/applications/{applicationId}/order/return | Mark order items as returned
+*ApplicationOperationsApi* | [**markorderitemsassent**](docs/Api/ApplicationOperationsApi.md#markorderitemsassent) | **PUT** /financing/v1/applications/{applicationId}/order/send | Mark order items as sent
+*ApplicationOperationsApi* | [**updaterecurrence**](docs/Api/ApplicationOperationsApi.md#updaterecurrence) | **PATCH** /financing/v1/recurrences/{recurrenceId} | Update recurrence
 *HealthCheckApi* | [**aPIhealthcheck**](docs/Api/HealthCheckApi.md#apihealthcheck) | **GET** /v1/health | API health check
-*MerchantsitesApi* | [**applicationnotification**](docs/Api/MerchantsitesApi.md#applicationnotification) | **POST** /financing/v1/{application.merchantUrls.notificationEndpoint} | Application notification
-*MerchantsitesApi* | [**paymentnotification**](docs/Api/MerchantsitesApi.md#paymentnotification) | **POST** /financing/v1/{application.merchantUrls.paymentEndpoint} | Payment notification
-*PrecheckApi* | [**precheck**](docs/Api/PrecheckApi.md#precheck) | **POST** /financing/v1/precheck | Precheck
+*PrecheckOperationsApi* | [**precheck**](docs/Api/PrecheckOperationsApi.md#precheck) | **POST** /financing/v1/precheck | Precheck
 *SecurityApi* | [**loginpartner**](docs/Api/SecurityApi.md#loginpartner) | **POST** /authentication/v1/partner | Login partner
 
 ## Models
@@ -129,7 +127,6 @@ Class | Method | HTTP request | Description
 - [ApplicationResponse](docs/Model/ApplicationResponse.md)
 - [ApplicationResponseAllOf](docs/Model/ApplicationResponseAllOf.md)
 - [ApplicationWithoutCustomerRequest](docs/Model/ApplicationWithoutCustomerRequest.md)
-- [Applicationnotificationresponse](docs/Model/Applicationnotificationresponse.md)
 - [ChangeOrderItemRequestSerializer](docs/Model/ChangeOrderItemRequestSerializer.md)
 - [CustomerBase](docs/Model/CustomerBase.md)
 - [CustomerExtraData](docs/Model/CustomerExtraData.md)
@@ -138,6 +135,7 @@ Class | Method | HTTP request | Description
 - [CustomerResponse](docs/Model/CustomerResponse.md)
 - [CustomerResponseAllOf](docs/Model/CustomerResponseAllOf.md)
 - [DeliveryCarrier](docs/Model/DeliveryCarrier.md)
+- [DeliveryCarrierDefault](docs/Model/DeliveryCarrierDefault.md)
 - [DeliveryType](docs/Model/DeliveryType.md)
 - [DocumentExtraData](docs/Model/DocumentExtraData.md)
 - [DocumentRequest](docs/Model/DocumentRequest.md)
@@ -181,7 +179,6 @@ Class | Method | HTTP request | Description
 - [PartnerLogin](docs/Model/PartnerLogin.md)
 - [PartnerLoginResult](docs/Model/PartnerLoginResult.md)
 - [Payment](docs/Model/Payment.md)
-- [Paymentnotificationresponse](docs/Model/Paymentnotificationresponse.md)
 - [PrecheckAddress](docs/Model/PrecheckAddress.md)
 - [PrecheckCustomerRequest](docs/Model/PrecheckCustomerRequest.md)
 - [PrecheckCustomerRequestAllOf](docs/Model/PrecheckCustomerRequestAllOf.md)
