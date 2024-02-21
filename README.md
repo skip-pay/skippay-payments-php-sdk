@@ -64,7 +64,7 @@ $username = 'USER_NAME';
 $password = 'PASSWORD';
 
 // Obtain access token
-$authResponse = $auth->loginpartner([
+$authResponse = $authApi->loginpartner([
   'username' => $username, 
   'password' => $password
 ]);
