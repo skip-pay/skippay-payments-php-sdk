@@ -1,5 +1,5 @@
 {
-    "name": "skippay/skippay-php-sdk",
+    "name": "skippay/skippay-payments-php-sdk",
     "description": "API documentation for Skip Pay partners.",
     "keywords": [
         "openapitools",

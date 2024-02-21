@@ -25,11 +25,11 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/skippay/skippay-php-sdk.git"
+      "url": "https://github.com/skip-pay/skippay-payments-php-sdk"
     }
   ],
   "require": {
-    "skippay/skippay-php-sdk": "*@dev"
+    "skippay/skippay-payments-php-sdk": "*@dev"
   }
 }
 ```
@@ -42,7 +42,7 @@ Download the files and include `autoload.php`:
 
 ```php
 <?php
-require_once('/path/to/skippay-php-sdk/vendor/autoload.php');
+require_once('/path/to/skippay-payments-php-sdk/vendor/autoload.php');
 ```
 
 ## Getting Started
