@@ -60,6 +60,7 @@ $authApi = new SkipPay\Api\SecurityApi(
   $config,
 );
 
+// Example, store this securely
 $username = 'USER_NAME';
 $password = 'PASSWORD';
 
@@ -72,7 +73,7 @@ $authResponse = $authApi->loginpartner([
 // Configure access token
 $config->setAccessToken($authResponse['accessToken']);
 
-$sdk = new SkipPay\Api\Sdk(
+$sdk = new SkipPay\Sdk(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -82,10 +83,10 @@ $applicationId = 11b00a1ef1; // string | applicationId
 $applicationCancelRequest = new \SkipPay\Model\ApplicationCancelRequest(); // \SkipPay\Model\ApplicationCancelRequest
 
 try {
-    $result = $sdk->ApplicationOperationsApi->cancelapplication($applicationId, $applicationCancelRequest);
+    $result = $sdk->ApplicationOperationsApi()->cancelapplication($applicationId, $applicationCancelRequest);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ApplicationOperationsApi->cancelapplication: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ApplicationOperationsApi()->cancelapplication(): ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -204,4 +205,3 @@ Class | Method | HTTP request | Description
 ## Author
 
 info@skippay.cz
-
